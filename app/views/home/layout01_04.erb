@@ -1,0 +1,37 @@
+
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="overlayPanel" data-display="overlay"> 
+    <h2>Overlay Panel</h2>
+    <p>You can close the panel by clicking outside the panel, pressing the Esc key, by swiping, or by clicking the button below:</p>
+    <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+    <a href="/home/testpage" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">GO test_page</a>
+  </div> 
+
+  <div data-role="header">
+     <a href="#overlayPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" >Overlay Panel</a>
+    <h1>회원 가입</h1>
+  </div>
+  
+  <div data-role="main" class="ui-content">
+        <!--name을 따로 다 다시 정의해야됨.-->
+        <div class="title">
+        <h4>학교메일로 인증받기</h4>
+        </div>
+   
+    <div class="container">
+        <div class="row">
+            <div class="outline" style="width: 100%; height: 50px;">
+            <div class="col-xs-6">
+            <input type="text"  name="msg" placeholder="example@cau.ac.kr"></div>
+            <div class="col-xs-6">
+            <input type="submit" class="form-control" name="msg" value="인증번호 받기"></div>
+            </div>
+        </div>
+    </div>   
+    
+            <input type="text" class="form-control" name="msg" placeholder="인증번호 입력">
+    
+  <div data-role="footer" data-position="fixed">
+    <h1>다음</h1>
+  </div> <!--여기는  a href로 연결-->
+</div> 

@@ -1,0 +1,30 @@
+<!--버튼부분-->
+<button class="button1" type="button" data-toggle="modal" data-target="#gender" style="text-align: left;">
+<span>성별</span>
+</button>
+
+<!--gender모달 뷰 페이지-->
+<div class="modal fade" id="gender" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">성별</h4>
+        <!--<button type="button" data-dismiss="modal">X</button>-->
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <div class="button2">
+          <label><input data-role="none" data-dismiss="modal" data-toggle="modal" data-target="#major" type="checkbox" value="MAN" name="MAN"><span>MAN</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-role="none" data-dismiss="modal" type="checkbox" value="WOMAN" name="WOMAN"><span>WOMAN</span></label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="gender_submit2" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--id gender로 연결되어 있는 거다!! -->

@@ -1,0 +1,296 @@
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="overlayPanel" data-display="overlay"> 
+    <h2>Menu bar</h2>
+    <p>메뉴바 테스트 페이지</p>
+    <a href="#pageone"class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close</a>
+    <a href="/users/sign_out" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">sign_out</a>
+  </div> 
+
+  <div data-role="header">
+    <a href="#overlayPanel">menu</a>
+    <h1>회원 가입</h1>
+  </div>
+  
+  <div class="ui-content">
+      <p>STEP1</p>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  
+  <form>
+  <button class="button1" type="button" data-toggle="modal" data-target="#gender"  data-user_id="<%=current_user.id%>">
+    <span id="new_gender">성별은?</span>
+  </button>
+
+  <input type="text" placeholder="나이를 입력해 주세요!! Ex)26" id="age" name="age">
+
+  <button class="button1" type="button" data-toggle="modal" data-target="#major"  data-user_id="<%=current_user.id%>">
+    <span id="new_major">학과는?</span>
+  </button>
+
+  <button class="button1" type="button" data-toggle="modal" data-target="#grade"  data-user_id="<%=current_user.id%>">
+    <span id="new_grade">학년는?</span>
+  </button>
+  
+  <button class="button1" type="button" data-toggle="modal" data-target="#language"  data-user_id="<%=current_user.id%>">
+    <span id="new_language">구사가능언어</span>
+  </button>
+  </form>
+  
+  </div>
+  
+  <div data-role="footer" data-position="fixed">
+      <h1><a href="/home/layout01_06" id="next1">다음</a></h1>
+  </div> 
+  
+  
+<!--#gender MODAL 시작-->
+<!--gender모달 뷰 페이지-->
+<div class="modal fade" id="gender" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">성별</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <div class="button2">
+          <label><input class="gender_checkbox" data-role="none" type="checkbox" value="MAN" name="MAN"><span>MAN</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="gender_checkbox" data-role="none" type="checkbox" value="WOMAN" name="WOMAN"><span>WOMAN</span></label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="gender_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--gender modal에서 layout01_05로 data 보내기.-->
+<script>
+  $(function(){
+    $("#gender_submit").click(
+      function(){
+        var gender = $("div[id='gender'] input[type='checkbox']:checked").val();
+        $("span#new_gender").html(gender);
+        $("span#new_gender").val(gender);
+        $("#gender").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->
+</div>
+<!--모달 뷰 페이지 끝-->
+<!--button선택 제한두기-->
+<script>
+  $("input[type=checkbox].gender_checkbox").click(function(){
+    var bol = $("input[type=checkbox].gender_checkbox:checked").length >= 1;
+    $("input[type=checkbox].gender_checkbox").not(":checked").attr("disabled",bol)
+  })
+</script>
+<!--#gender MODAL 끝-->
+
+<!--#major MODAL 시작--> <!--이부분 대대적 추가 필요!! -->
+<!--major모달 뷰 페이지-->
+<div class="modal fade" id="major" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">학과</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        
+        <div class="button2">
+          <label><input data-dismiss="modal" data-toggle="modal" data-target="#major2"
+          data-role="none" type="checkbox" value="business" name="business"><span>경영학부</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-dismiss="modal" data-toggle="modal" data-target="#major2" 
+          data-role="none" type="checkbox" value="심리학과" name=""><span>심리학과</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-dismiss="modal" data-toggle="modal" data-target="#major2" 
+          data-role="none" type="checkbox" value="컴공" name=""><span>컴퓨터공학부</span></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--모달 뷰 페이지 끝--><!--major2 모달 뷰 페이지-->
+<!--각 학과별로 다 따로 만들어야 하네...ajax로 페이지 바꾸지 않고 보이게 할 수 있지 않을까?!-->
+<div class="modal fade2" id="major2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">학과</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <div class="row">
+          <div class="col-xs-3 button2" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="경영"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          </div>
+          <div class="col-xs-3" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="경영"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          </div>
+          <div class="col-xs-3" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          </div>
+          <div class="col-xs-3" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공" name=""><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          </div>
+          <div class="col-xs-3" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공" name=""><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          </div>
+          <div class="col-xs-3" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공" name=""><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          </div>
+          <div class="col-xs-3" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공" name=""><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="major_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--major_detail modal에서 layout01_05로 data 보내기.-->
+<script>
+  $(function(){
+    $("#major_submit").click(
+      function(){
+        var x = $("div[id='major2'] input[type='checkbox']:checked").val();
+        $("span#new_major").html(x);
+        $("span#new_major").val(x);
+        $("#major2").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->  
+</div>  
+<!--major2 뷰 페이지 끝-->
+<!--button선택 제한두기-->
+<script>
+  $("input[type=checkbox].major_checkbox").click(function(){
+    var bol = $("input[type=checkbox].major_checkbox:checked").length >= 1;
+    $("input[type=checkbox].major_checkbox").not(":checked").attr("disabled",bol)
+  })
+</script>
+<!--#major MODAL 끝-->
+
+<!--#grade MODAL 시작-->
+<!--grade모달 뷰 페이지-->
+<div class="modal fade" id="grade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">성별</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <div class="button2">
+          <label><input class="grade_checkbox" data-role="none" type="checkbox" value="1" name="1학년"><span>1학년</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="grade_checkbox" data-role="none" type="checkbox" value="2" name="2학년"><span>2학년</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="grade_checkbox" data-role="none" type="checkbox" value="3" name="3학년"><span>3학년</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="grade_checkbox" data-role="none" type="checkbox" value="4" name="4학년"><span>4학년</span></label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="grade_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--grade modal에서 layout01_05로 data 보내기.-->
+<script>
+  $(function(){
+    $("#grade_submit").click(
+      function(){
+        var x = $("div[id='grade'] input[type='checkbox']:checked").val();
+        $("span#new_grade").html(x);
+        $("span#new_grade").val(x);
+        $("#grade").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->
+</div>
+<!--모달 뷰 페이지 끝-->
+<!--button선택 제한두기-->
+<script>
+  $("input[type=checkbox].grade_checkbox").click(function(){
+    var bol = $("input[type=checkbox].grade_checkbox:checked").length >= 1;
+    $("input[type=checkbox].grade_checkbox").not(":checked").attr("disabled",bol)
+  })
+</script>
+<!--#grade MODAL 끝-->
+
+<!--#language MODAL 시작-->
+<!--language모달 뷰 페이지-->
+<div class="modal fade" id="language" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">구사가능 언어</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <textarea rows="4" cols="50" placeholder="구사가능 언어를 써주세요!!"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="language_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--gender modal에서 layout01_05로 data 보내기.-->
+<script>
+  $(function(){
+    $("#language_submit").click(
+      function(){
+        var x = $("div[id='language'] textarea").val();
+        $("span#new_language").html(x);
+        $("span#new_language").val(x);
+        $("#language").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->
+</div>
+<!--모달 뷰 페이지 끝-->
+<!--#language MODAL 끝-->
+
+<!--다음 button 시작-->
+<script>
+  $(function(){
+    $("#next1").click(
+      function(){
+        $.ajax({
+          data:{
+          gender: $("#new_gender").val(),            
+          age: $("#age").val(),
+          major: $("#new_major").val(),
+          language: $("#new_language").val(),
+          grade: $("#new_grade").val()
+          },
+          url: "/home/layout01_05_modify",
+          success: function(){
+            alert("데이터 입력 성공 1page")
+          }
+        });
+    });
+  });
+</script>
+<!--다음 button 끝-->  
+</div><!--data-role="page" id="pageone" 끝--> 

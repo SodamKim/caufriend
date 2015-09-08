@@ -1,0 +1,286 @@
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="overlayPanel" data-display="overlay"> 
+    <h2>Menu bar</h2>
+    <p>메뉴바 테스트 페이지</p>
+    <a href="#pageone"class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close</a>
+    <a href="/users/sign_out" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">sign_out</a>
+  </div> 
+
+  <div data-role="header">
+    <a href="#overlayPanel">menu</a>
+    <h1>회원 가입</h1>
+  </div>
+  
+  <div class="ui-content">
+      <p>STEP2</p>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <!--name을 따로 다 다시 정의해야됨.form태그 추가해야됨.-->
+    <form>
+      <button class="button1" type="button" data-toggle="modal" data-target="#character"  data-user_id="<%=current_user.id%>">
+        <span id="new_character">성격(자유롭게 써주세요)</span>
+      </button>      
+      
+      <button class="button1" type="button" data-toggle="modal" data-target="#face"  data-user_id="<%=current_user.id%>">
+        <span id="new_face">외모(당신은 무슨 상인가요?!)</span>
+      </button> 
+      
+      <button class="button1" type="button" data-toggle="modal" data-target="#alcohol"  data-user_id="<%=current_user.id%>">
+        <span id="new_alcohol">주량[Ex)소주 1병, 제한 없음, 맥주 안먹음..]</span>
+      </button>      
+
+      <button class="button1" type="button" data-toggle="modal" data-target="#home"  data-user_id="<%=current_user.id%>">
+        <span id="new_home">거주지[Ex)기숙사, 강남구, 자취..]</span>
+      </button>      
+
+      <button class="button1" type="button" data-toggle="modal" data-target="#religion"  data-user_id="<%=current_user.id%>">
+        <span id="new_religion">종교</span>
+      </button>  
+
+    </form> 
+  </div>
+  
+  <br>
+  
+  <div>
+    &nbsp;&nbsp;&nbsp;많은 정보를 입력 할 수록<br> 
+    &nbsp;&nbsp;&nbsp;자신에게 맞는 친구를 소개 받을 수 있어요.
+  </div>
+  
+  <div data-role="footer" data-position="fixed">
+      <h1><a href="/home/layout01_07" id="next2">다음</a></h1>
+  </div> 
+
+<!--#character MODAL 시작-->
+<!--character모달 뷰 페이지-->
+<div class="modal fade" id="character" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">구사가능 언어</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <textarea rows="4" cols="50" placeholder="당신의 성격을 지껄여 주세요!!"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="character_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--character modal에서 layout01_06로 data 보내기.-->
+<script>
+  $(function(){
+    $("#character_submit").click(
+      function(){
+        var x = $("div[id='character'] textarea").val();
+        $("span#new_character").html(x);
+        $("span#new_character").val(x);
+        $("#character").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->
+</div>
+<!--character모달 뷰 페이지 끝-->
+<!--#character MODAL 끝-->
+
+<!--#face MODAL 시작-->
+<!--face모달 뷰 페이지-->
+<div class="modal fade" id="face" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">외모(당신은 무슨 상인가요?!)</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <div class="button2">
+          <label><input class="face_checkbox" data-role="none" type="checkbox" value="쥐상" name="쥐상"><span>쥐상</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="face_checkbox" data-role="none" type="checkbox" value="여우상" name="여우상"><span>여우상</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="face_checkbox" data-role="none" type="checkbox" value="강아지상" name="강아지상"><span>강아지상</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="face_checkbox" data-role="none" type="checkbox" value="곰상" name="곰상"><span>곰상</span></label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="face_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--face modal에서 layout01_06로 data 보내기.-->
+<script>
+  $(function(){
+    $("#face_submit").click(
+      function(){
+        var x = $("div[id='face'] input[type='checkbox']:checked").val();
+        $("span#new_face").html(x);
+        $("span#new_face").val(x);
+        $("#face").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->
+</div>
+<!--face모달 뷰 페이지 끝-->
+<!--button선택 제한두기-->
+<script>
+  $("input[type=checkbox].face_checkbox").click(function(){
+    var bol = $("input[type=checkbox].face_checkbox:checked").length >= 1;
+    $("input[type=checkbox].face_checkbox").not(":checked").attr("disabled",bol)
+  })
+</script>
+<!--#face MODAL 끝-->
+
+<!--#alcohol MODAL 시작-->
+<!--alcohol모달 뷰 페이지-->
+<div class="modal fade" id="alcohol" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">주량은?!</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <textarea rows="4" cols="50" placeholder="당신의 주량을 지껄여 주세요!!"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="alcohol_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--alcohol modal에서 layout01_06로 data 보내기.-->
+<script>
+  $(function(){
+    $("#alcohol_submit").click(
+      function(){
+        var x = $("div[id='alcohol'] textarea").val();
+        $("span#new_alcohol").html(x);
+        $("span#new_alcohol").val(x);
+        $("#alcohol").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->
+</div>
+<!--alcohol모달 뷰 페이지 끝-->
+<!--#alcohol MODAL 끝-->
+
+<!--#home MODAL 시작-->
+<!--home모달 뷰 페이지-->
+<div class="modal fade" id="home" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">구사가능 언어</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <textarea rows="4" cols="50" placeholder="당신의 거주지를 지껄여 주세요!!"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="home_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--home modal에서 layout01_05로 data 보내기.-->
+<script>
+  $(function(){
+    $("#home_submit").click(
+      function(){
+        var x = $("div[id='home'] textarea").val();
+        $("span#new_home").html(x);
+        $("span#new_home").val(x);
+        $("#home").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->
+</div>
+<!--home모달 뷰 페이지 끝-->
+<!--#home MODAL 끝-->
+
+<!--#religion MODAL 시작-->
+<!--religion모달 뷰 페이지-->
+<div class="modal fade" id="religion" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">외모(당신은 무슨 상인가요?!)</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <div class="button2">
+          <label><input class="religion_checkbox" data-role="none" type="checkbox" value="기독교" name="기독교"><span>기독교</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="religion_checkbox" data-role="none" type="checkbox" value="불교" name="불교"><span>불교</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="religion_checkbox" data-role="none" type="checkbox" value="천주교" name="천주교"><span>천주교</span></label>
+        </div>
+        <div class="button2">
+          <label><input class="religion_checkbox" data-role="none" type="checkbox" value="무교" name="무교"><span>무교</span></label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="religion_submit" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+<!--religion modal에서 layout01_06로 data 보내기.-->
+<script>
+  $(function(){
+    $("#religion_submit").click(
+      function(){
+        var x = $("div[id='religion'] input[type='checkbox']:checked").val();
+        $("span#new_religion").html(x);
+        $("span#new_religion").val(x);
+        $("#religion").modal('toggle'); //modal 닫기 역할
+    });
+  });
+</script>
+<!---->
+</div>
+<!--religion모달 뷰 페이지 끝-->
+<!--button선택 제한두기-->
+<script>
+  $("input[type=checkbox].religion_checkbox").click(function(){
+    var bol = $("input[type=checkbox].religion_checkbox:checked").length >= 1;
+    $("input[type=checkbox].religion_checkbox").not(":checked").attr("disabled",bol)
+  })
+</script>
+<!--#religion MODAL 끝-->
+
+
+
+
+<!--다음 button 시작-->
+<script>
+  $(function(){
+    $("#next2").click(
+      function(){
+        $.ajax({
+          data:{
+          character: $("#new_character").val(),
+          face: $("#new_face").val(),            
+          alcohol: $("#new_alcohol").val(),
+          home: $("#new_home").val(),
+          religion: $("#new_religion").val()
+          },
+          url: "/home/layout01_06_modify",
+          success: function(){
+            alert("데이터 입력 성공 2page")
+          }
+        });
+    });
+  });
+</script>
+<!--다음 button 끝-->  
+</div> <!--페이지 끝-->

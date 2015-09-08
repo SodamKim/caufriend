@@ -1,0 +1,96 @@
+
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="overlayPanel" data-display="overlay"> 
+    <h2>Overlay Panel</h2>
+    <p>You can close the panel by clicking outside the panel, pressing the Esc key, by swiping, or by clicking the button below:</p>
+    <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close</a>
+    <a href="/home/testpage" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">GO test_page</a>
+  </div> 
+
+  <div data-role="header">
+    <a href="#overlayPanel">menu</a>
+    <h1>회원 가입</h1>
+  </div>
+  
+  <div class="ui-content">
+      <p>필수 프로필정보 입력</p>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <form>
+  <button class="button1" type="button" data-toggle="modal" data-target="#gender" style="text-align: left;">
+    <span>성별</span>
+  </button>
+  <input type="text" placeholder="나이" name="user_name">
+  <button class="button1" type="button" style="text-align: left;">학과</button>
+  <button class="button1" type="button" style="text-align: left;">학년</button>
+  <button class="button1" type="button" style="text-align: left;">학년</button>
+  <button class="button1" type="button" style="text-align: left;">구사가능언어</button>
+  </form>
+  </div>
+  
+  <div data-role="footer" data-position="fixed">
+    <h1>다음</h1>
+  </div> 
+
+<!--#gender MODAL-->
+<!--gender모달 뷰 페이지-->
+<div class="modal fade" id="gender" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">성별</h4>
+        <!--<button type="button" data-dismiss="modal">X</button>-->
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <div class="button2">
+          <label><input data-role="none" data-dismiss="modal" data-toggle="modal" data-target="#major" type="checkbox" value="MAN" name="MAN"><span>MAN</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-role="none" data-dismiss="modal" type="checkbox" value="WOMAN" name="WOMAN"><span>WOMAN</span></label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="gender_submit2" type="submit">수정하기</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--major모달 뷰 페이지-->
+<div class="modal fade2" id="major" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="content">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">성별</h4>
+        <!--<button type="button" data-dismiss="modal">X</button>-->
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user_id" name="user_id">
+        <div class="button2">
+          <label><input data-role="none" type="checkbox" value="MAN" name="MAN"><span>MAN</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-role="none" type="checkbox" value="WOMAN" name="WOMAN"><span>WOMAN</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-role="none" type="checkbox" value="MAN" name="MAN"><span>MAN</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-role="none" type="checkbox" value="WOMAN" name="WOMAN"><span>WOMAN</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-role="none" type="checkbox" value="MAN" name="MAN"><span>MAN</span></label>
+        </div>
+        <div class="button2">
+          <label><input data-role="none" type="checkbox" value="WOMAN" name="WOMAN"><span>WOMAN</span></label>
+        </div>        
+      </div>
+      <div class="modal-footer">
+        <button href="/users/sign_in">수정하기</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal이 버튼과 같은 div 안에 있어야 작동한다.!!!-->
+</div> <!---->

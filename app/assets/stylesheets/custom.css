@@ -1,0 +1,432 @@
+/*menu bar css*/
+.menubar{
+  width: 25px;
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding-left: 3px;
+}
+
+.menu-picture{
+  background-color: #D8D8D8;
+  width: 100%;
+  height: 175px;
+}
+
+.menu-small{
+  width: 15px;
+  height: 15px;
+  margin: 3px;
+  margin-right: 4px;
+}
+/*jquery.css4444번째 줄 제거.*/
+
+/*layout01 에서 사용 */
+body {
+  background-color: #E6E6E6;
+  font: 1em Helvetica;
+}
+.center{
+    text-align:center;
+}
+.right{
+    text-align:right;
+}
+
+.signup {
+  width: 100%;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+[type=text]{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  height: 45px;
+  line-height: 45px;  
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: rgba(0,0,0,.4);
+}
+
+.submit{
+  margin-top: 25px;
+  width: 80%;
+  border: 0;
+  background-color: #53CACE;
+  border-radius: 5px;
+  height: 50px;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
+}
+/*끝*/
+
+/*sign_up에서 사용*/
+.nav{
+  background-color:skyblue;
+  text-align:center;
+}
+.footer{
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:32%;
+  width:100%;
+} 
+/*끝
+//layout05에서 사용
+//끝*/
+
+/*layout10*/
+.photo_enroll{
+  width:100%;
+  height:250px;
+  background-color:white;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+  
+.picture{
+    padding-top: 10px;
+    width: 60px;
+    height: auto;
+}
+
+.space{
+    padding-left: 10px;
+}
+
+.ex_picture{
+  width:45%;
+  height:20%;
+}
+
+/*/가장 위에 header고정을 위한 css/*/
+
+.header{
+
+    width:100%;
+    height:43px;
+    border:1px solid #CCC;
+    margin:0px auto;
+}
+
+.inside{
+    text-align: center;
+}
+
+
+.txt{
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  margin-bottom:0px;
+  padding-bottom: 0px;
+}
+
+input:focus {
+  outline:none !important;
+}
+
+
+/*여기서 부터는 위의 텍스트를 수정한 공간입니다
+
+///-----!!!수정방법!!!-----///
+위의 본판을 삭제하지 않고, 보기용(?)으로 바꿔 본판을 남겨두고
+그걸 복붙해서 이 아래에서 수정하고 무엇을 수정하였는지 설명해놓으시면 됩니당
+///-----!!!수정방법!!!-----///
+
+⊂_ヽ 
+　 ＼＼ Λ＿Λ 
+　　 ＼( 'ㅅ' ) 
+　　　 >　⌒ヽ 
+　　　/ 　 へ＼ 
+　　 /　　/　＼＼ 
+　　 ﾚ　ノ　　 ヽ_つ 
+　　/　/ 
+　 /　/| 
+　(　(ヽ 
+　|　|、＼ 
+　| 丿 ＼ ⌒) 
+　| |　　) / 
+`ノ )　　Lﾉ
+
+수정방법 여기서 끄으읕*/
+
+/*footer이랑 header를 최대한 바꿈(색이랑 글씨크기, 글씨 색바꿨음)*/
+.ui-bar-a,
+.ui-page-theme-a .ui-bar-inherit,
+html .ui-bar-a .ui-bar-inherit,
+html .ui-body-a .ui-bar-inherit,
+html body .ui-group-theme-a .ui-bar-inherit {
+	background-color: 			#18709c /*{a-bar-background-color}*/;
+	border-color:	 		#ddd /*{a-bar-border}*/;
+	color: 					#fff /*{a-bar-color}*/;
+	text-shadow: 0 /*{a-bar-shadow-x}*/ 0px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ 	#006896 /*{a-bar-shadow-color}*/;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/*input의 밑줄을 페이지 끝에 닿게 하기 위해 padding을 수정함*/
+.ui-content {
+	border-width: 0;
+	overflow: visible;
+	overflow-x: hidden;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+/*input text type button 없애기!*/
+[type=text]{
+	margin-bottom:0px;
+	color: #cccccc;
+}
+
+
+/*버튼 관련 css부분*/
+/* Button up layout05page 버튼 */
+.menu-button {
+	background-color: 			#fff /*{a-bup-background-color}*/;
+	border-color:	 		#fff /*{a-bup-border}*/;
+	border-bottom: 1px solid #cccccc;
+	color: 					#000000 /*{a-bup-color}*/;
+	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
+	border-radius:0;
+	padding: 10px;
+	width:100%;
+}
+
+.button1 {
+	background-color: 			#fff /*{a-bup-background-color}*/;
+	border-color:	 		#fff /*{a-bup-border}*/;
+	border-bottom: 1px solid #cccccc;
+	color: 					#cccccc /*{a-bup-color}*/;
+	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
+	border-radius:0;
+	padding: 10px;
+	width:100%;
+}
+
+.button2 {
+    margin:0px;
+    background-color:#EFEFEF;
+    border-radius:0px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+}
+
+.button2 label {
+    float:left;
+    width:auto;
+}
+
+.button2 label span {
+    text-align:center;
+    padding:0px 0px;
+    display:block;
+}
+
+.button2 label input {
+    position:absolute;
+    top:-20px;
+}
+
+.button2 input:checked + span {
+    background-color:#911;
+    color:#fff;
+}
+
+input[type="checkbox"]{
+    display:none;
+}
+
+
+/*layout02_02*/
+.second_menu  {
+    height: 43px;
+    width: 100%;
+}
+.se_div_menu  {
+    height: 43px;
+    width: 100%;
+    background-color: #fff;
+    border-top-color: #fff;
+    border-bottom: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    text-align:center;
+}
+.col-xs-4 {
+  padding-left:0;
+  padding-right:0;
+}
+.se_span_menu {
+  position:relative;
+  top:11px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.front_profile {
+  border: 1px solid #cccccc;
+  height: 400px;
+  width: 100%;
+}
+
+/* 이부분 이미지 크기 자동조절을 어떻게 해야할지 알아봐야함*/
+.front_img {
+  display: block;
+    max-width:100%;
+    max-height:300px;
+    width: 90%px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+}
+.interest_img{
+  width:50px;
+  height:auto;
+}
+.date {
+  padding-left:10px;
+}
+.simple_profile{
+  padding-left:15px;
+}
+/*layout02_02 끝*/
+
+/*card 뒤집기 layout02_01*/
+.card {
+  position: relative;
+  top: -383px;
+  height:400px;
+  width:100%;
+}
+
+/*layout04_01*/
+.div-msg{
+  width: 100%;
+  height: 125px;
+  background-color: white;
+  margin-top: 15px;
+  margin-bottom: 1px;
+  padding: 5px;
+  border: 1.5px solid #BDBDBD;
+}
+
+.confirm {
+	background-color: 			#fff /*{a-bup-background-color}*/;
+	border-color:	 		#fff /*{a-bup-border}*/;
+	border-bottom: 1px solid #cccccc;
+	color: 					#1195FA /*{a-bup-color}*/;
+	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
+	border-radius:0;
+	padding: 10px;
+	width:100%;
+}
+.getget{
+  margin: 3px;
+}
+
+.time{
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+/*layout05_01*/
+.ctg{
+  width: 100%;
+  height: 35px;
+  background-color: #848484;
+  color: #FFFFFF;
+  padding-left: 10px;
+  padding-top: 7px;
+  margin-top: 8px;
+  }
+  
+.button05-01 {
+  margin-bottom: 8px;
+	background-color: 			#fff /*{a-bup-background-color}*/;
+	border-color:	 		#fff /*{a-bup-border}*/;
+	border-bottom: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	color: 					#000000 /*{a-bup-color}*/;
+	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
+	border-radius:0;
+	padding: 10px;
+	width:100%;
+}
+
+.caution{
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.realcaution{
+  color: #FE2EC8;
+}
+
+/*layout02_03*/
+.right02{
+  text-align:right;
+}
+.left02{
+  border-bottom: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	background-color: 			#fff /*{a-bup-background-color}*/;
+	border-color:	 		#fff /*{a-bup-border}*/;
+	border-radius:0;
+}
+.interests02 {
+  border-bottom: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	background-color: 			#fff /*{a-bup-background-color}*/;
+	border-color:	 		#fff /*{a-bup-border}*/;
+	border-radius:0;
+}
+
+.title02 {
+	background-color: 			#999999 /*{a-bup-background-color}*/;
+	width: 100%;
+	height: 40px;
+	border-radius:0;
+	color: #fff;
+}
+.layout02 p{
+  padding-left:10px;
+  padding-top: 10px;
+} 
+
+/*layout07_01*/
+.button07-01 {
+	background-color: 			#fff /*{a-bup-background-color}*/;
+	border-color:	 		#fff /*{a-bup-border}*/;
+	border-bottom: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	color: 					#000000 /*{a-bup-color}*/;
+	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
+	border-radius:0;
+	padding: 10px;
+	width:100%;
+}
+
+/*layout01_05 modal 페이지 image 바꾸기*/
+.major_checkbox{
+  content: url(/assets/business/1.png);
+}

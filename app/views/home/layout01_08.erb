@@ -1,0 +1,76 @@
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="overlayPanel" data-display="overlay"> 
+    <h2>Menu bar</h2>
+    <p>메뉴바 테스트 페이지</p>
+    <a href="#pageone"class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close</a>
+    <a href="/users/sign_out" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">sign_out</a>
+  </div> 
+
+  <div data-role="header">
+    <a href="#overlayPanel">menu</a>
+    <h1>회원 가입</h1>
+  </div>
+  
+  <div class="ui-content">
+      <p>STEP4, 추가 프로필 입력</p>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <!--name을 따로 다 다시 정의해야됨.form태그 추가해야됨.-->
+    <form>
+     
+      <input type="text" id="what_friend" name="what_friend" placeholder="어떤 친구를 만나고 싶나요?">
+      <input type="text" id="empty_time" name="empty_time" placeholder="공강시간이나 편한 시간대는 언제인가요?">
+      <input type="text" id="hobby" name="hobby" placeholder="취미나 즐기는 여가활동은 무엇인가요?">
+      <input type="text" id="movie" name="movie" placeholder="좋아하는 영화는 무엇인가요?">
+      <input type="text" id="book" name="book" placeholder="좋아하는 책은 무엇인가요?">
+      <input type="text" id="song" name="song" placeholder="좋아하는 노래는 무엇인가요?">
+      <input type="text" id="myself" name="myself" placeholder="자유롭게 자신을 소개해주세요.">
+      <input type="text" id="not_want" name="not_want" placeholder="혹시나 소개받고 싶지 않은 친구가 있다면 이름을 적어주세요?">
+     
+       
+    </form> 
+  </div>
+
+
+  
+  <br>
+  
+  <div>
+    &nbsp;&nbsp;&nbsp;많은 정보를 입력 할 수록<br> 
+    &nbsp;&nbsp;&nbsp;자신에게 맞는 친구를 소개 받을 수 있어요.
+  </div>
+
+
+  <div data-role="footer" data-position="fixed">
+      <h1><a href="/home/layout02_01" id="next4">다음</a></h1>
+  </div> 
+  
+
+<!--다음 button 시작-->
+<script>
+  $(function(){
+    $("#next4").click(
+      function(){
+        $.ajax({
+          data:{
+          what_friend: $("#what_friend").val(),
+          empty_time: $("#empty_time").val(), 
+          hobby: $("#hobby").val(),
+          movie: $("#movie").val(),
+          book: $("#book").val(),
+          song: $("#song").val(),
+          myself: $("#myself").val(),
+          not_want: $("#not_want").val()
+          },
+          url: "/home/layout01_08_modify",
+          success: function(){
+            alert("데이터 입력 성공 4page")
+          }
+        });
+    });
+  });
+</script>
+<!--다음 button 끝-->   
+  
+</div> <!--페이지 끝-->

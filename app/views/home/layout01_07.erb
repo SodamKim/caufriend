@@ -1,0 +1,57 @@
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="overlayPanel" data-display="overlay"> 
+    <h2>Menu bar</h2>
+    <p>메뉴바 테스트 페이지</p>
+    <a href="#pageone"class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close</a>
+    <a href="/users/sign_out" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">sign_out</a>
+  </div> 
+
+  <div data-role="header">
+    <a href="#overlayPanel">menu</a>
+    <h1>회원 가입</h1>
+  </div>
+  
+  <div class="ui-content">
+      <p>STEP3, 사진넣기</p>
+  </div>
+
+
+<%=form_tag "/home/layout01_07_modify" , multipart: true do %>
+  <div data-role="main" class="ui-content">
+  <!--사진추가를 위한 코드 더 필요.-->
+  <center>
+    <div class="image-upload">
+      <label for="file-input">
+        <img id="photo1" style="width:50%" src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/photo-128.png">
+      </label>
+      <input id="file-input" type="file" name="photo" onchange="readURL(this)" style="display:none"/> <!--css때문에 선이 보이네, style="display:none"...-->
+    </div>
+  </center>
+  
+  <div>
+    <p style="margin-top:10px" class="space">얼굴 사진은 삼가해 주세요.<br>
+    본인의 얼굴보다 자신을 더욱 잘 나타낼 수 있는<br>
+    사진을 올려주세요.</p>
+  </div>    
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1><input type="submit" value="다음"></h1>
+  </div> 
+<%end%>
+<!--js파일에서 submit 수정으로 submit 가능하게함. 사진 1장까지 ok-->
+
+  
+<!--사진 추가 후 바로 볼 수 있도록!! -->
+<script>
+function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            $('#photo1').attr('src', e.target.result)
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+</div><!--페이지 끝-->

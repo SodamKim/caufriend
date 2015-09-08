@@ -1,0 +1,28 @@
+<div class="row center">
+    <h1>중사친</h1>   
+    <p>중대사람친구를 소개합니다.</p>
+</div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, placeholder:'ID:' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "off", placeholder:'PW:' %>
+  </div>
+    <p class="right">아이디/비밀번호 찾기</p>
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in", class:'submit center' %>
+  </div>
+<% end %>
+<br><br>
+<div>
+  <%= render "devise/shared/links" %>
+</div>

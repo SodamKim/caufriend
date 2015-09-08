@@ -1,0 +1,17 @@
+<div class="row center">
+    <h1>test페이지</h1>   
+    <p>sign_up 페이지로 이페이지 대체할 거임!! by 지혁</p>
+</div>
+
+<%if user_signed_in?%>
+<button class="submit center" >
+  <a href="/users/sign_out">sign_out</a>
+</button>
+<%else%>
+<button class="submit center">
+  <a href="/users/sign_in">sign_in</a>
+</button>
+<button class="submit center">
+  <a href="/users/sign_up">sign_up</a>
+</button>
+<%end%>

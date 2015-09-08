@@ -1,0 +1,113 @@
+//layout01 에서 사용
+body {
+  background-color: #1abc9c;
+  font: 1em Helvetica;
+}
+.center{
+    text-align:center;
+}
+.right{
+    text-align:right;
+}
+
+.signup {
+  width: 100%;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+[type=text]{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  border: 0;
+  border-bottom: px solid rgba(0,0,0,.2);
+  height: 45px;
+  line-height: 45px;  
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: rgba(0,0,0,.4);
+}
+
+.submit{
+  margin-top: 25px;
+  width: 80%;
+  border: 0;
+  background-color: #53CACE;
+  border-radius: 5px;
+  height: 50px;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
+}
+//끝
+
+//sign_up에서 사용
+.nav{
+  background-color:skyblue;
+  text-align:center;
+}
+.footer{
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:32%;
+  width:100%;
+} 
+//끝
+//layout05에서 사용
+//끝
+
+//layout10
+.photo_enroll{
+  width:100%;
+  height:250px;
+  background-color:white;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+  
+.picture{
+    padding-top: 10px;
+    width: 60px;
+    height: auto;
+}
+
+.space{
+    padding-left: 10px;
+}
+
+.ex_picture{
+  width:45%;
+  height:20%;
+}
+//
+///가장 위에 header고정을 위한 css///
+
+.header{
+
+    width:100%;
+    height:43px;
+    border:1px solid #CCC;
+    margin:0px auto;
+}
+//
+.inside{
+    text-align: center;
+}
+/////끄읕/////
+
+.txt{
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  margin-bottom:0px;
+  padding-bottom: 0px;
+}
+
+input:focus {
+  outline:none !important;
+}

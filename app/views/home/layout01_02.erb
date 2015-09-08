@@ -1,0 +1,38 @@
+<div data-role="page" id="pageone">
+  <div data-role="panel" id="overlayPanel" data-display="overlay"> 
+    <h2>Overlay Panel</h2>
+    <p>You can close the panel by clicking outside the panel, pressing the Esc key, by swiping, or by clicking the button below:</p>
+    <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+    <a href="/home/testpage" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">GO test_page</a>
+  </div> 
+
+
+  <div data-role="header" class="header">
+    <a href="#overlayPanel" class="glyphicon glyphicon-align-justify">zz</a>
+    <div class="inside" style="position: relative; left:10px; top: -50px;">
+    <h3>회원 가입</h3>
+    </div>
+  </div>
+
+  <div data-role="main">
+    <!--name을 따로 다 다시 정의해야됨.form태그 추가해야됨.-->
+    <form>
+      <input type="text" name="msg" placeholder="별명(이름 대신 공개될 별명입니다)">
+      <input type="text" name="msg" placeholder="비밀번호">
+      <input type="text" name="msg" placeholder="비밀번호 확인">
+    </form> 
+  </div>
+  <!--체크박스. name, value 수정필요.-->
+  <div style="line-height:15px;">
+    <label><input type="checkbox" name="auto_login" value="1" >
+      <span style="font-size:11px; color:#5f6164; vertical-align:top;">이용약관에 동의합니다.</span>
+    </label>
+    <label><input type="checkbox" name="auto_login" value="1" >
+      <span style="font-size:11px; color:#5f6164; vertical-align:top;">개인정보이용방침에 동의합니다.</span>
+    </label>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>동의하고 가입 시작하기</h1>
+  </div> 
+</div> 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CAU_Friend</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  <!--모바일 사이즈 최적화-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!---->
+  
+  <!--bootstrap grid system-->
+  <link rel="stylesheet" href="/assets/bootstrap.css">
+  <link rel="stylesheet" href="/assets/bootstrap-theme.css">
+  <script href="/assets/bootstrap.js"></script>
+  <!---->
+  
+  <!--menubar사용 필요 link,script-->
+  <link rel="stylesheet" href="/assets/jquery.mobile-1.4.5.css">
+  <script href="/assets/jquery.mobile-1.4.5.js"></script>
+  <!---->
+  
+  <!--만든 css-->
+  <link rel="stylesheet" href="/assets/custom.css">
+  <!---->
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+
+</html>
