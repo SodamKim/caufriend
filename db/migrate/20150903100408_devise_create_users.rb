@@ -1,12 +1,12 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
-      ##지혁이 추가 db
-      t.string :name,               null: false, default: ""
-
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+
+      ##김지혁이 추가 db
+      t.string :name,               null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token

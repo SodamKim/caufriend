@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Interest.create(id: 1, user_id: 1, age: 26, gender: "MAN", major: "경영", language: "일본어", grade: 1, character: "착하고, 침대 좋아함. 귀여운거에 환장함.", face: "곰상", alcohol: "순하리 1병", home: "기숙사", religion: "무교", photo: "1.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+Interest.create(id: 2, user_id: 2, age: 6, gender: "MAN", major: "영문", language: "영어", grade: 4, character: "착함", face: "쥐상", alcohol: "순하리 2병", home: "기숙사", religion: "무교", photo: "2.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+Interest.create(id: 3, user_id: 3, age: 2, gender: "WOMAN", major: "경영", language: "한국어", grade: 2, character: "나쁜놈임", face: "여우상", alcohol: "순하리 3병", home: "기숙사", religion: "무교", photo: "3.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+Interest.create(id: 4, user_id: 4, age: 276, gender: "WOMAN", major: "신방", language: "일본어", grade: 4, character: "귀여운거에 환장함.", face: "아메바상", alcohol: "순하리 1.5병", home: "자취", religion: "무교", photo: "4.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+Interest.create(id: 5, user_id: 5, age: 2226, gender: "WOMAN", major: "경영", language: "한국어,영어", grade: 4, character: "아무나 좋아함", face: "쥐상", alcohol: "순하리 10병", home: "자취", religion: "무교", photo: "5.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+Interest.create(id: 6, user_id: 6, age: 206, gender: "MAN", major: "경영", language: "일본어", grade: 3, character: "내성적임.", face: "강아지상", alcohol: "순하리 11병", home: "자취", religion: "무교", photo: "6.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+Interest.create(id: 7, user_id: 7, age: 20, gender: "WOMAN", major: "국제물류", language: "중국어", grade: 4, character: "그냥저냥", face: "개상", alcohol: "순하리 21병", home: "노숙", religion: "무교", photo: "7.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+Interest.create(id: 8, user_id: 8, age: 30, gender: "MAN", major: "컴공", language: "일본어", grade: 2, character: "ㅋㅋㅋ", face: "이두희상", alcohol: "순하리 13병", home: "강남", religion: "무교", photo: "8.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+Interest.create(id: 9, user_id: 9, age: 27, gender: "WOMAN", major: "경영", language: "없음", grade: 5, character: "나도 모름", face: "걍상", alcohol: "순하리 51병", home: "동작구", religion: "무교", photo: "9.jpg", what_friend: "연애하고 싶음", empty_time: "점심시간, 6시 이후", hobby: "영화보기", movie: "가리는 영화 없이 다  좋아함.", book: "만화책", song: "없음", myself: "반가워용~~ㅎㅎ", not_want: "김지원")
+User.create(id: 1, email:"1@naver.com", name:"김지혁", password:1)
+User.create(id: 2, email:"2@naver.com", name:"김소담", password:1)
+User.create(id: 3, email:"3@naver.com", name:"김재두", password:1)
+User.create(id: 4, email:"4@naver.com", name:"서수진", password:1)
+User.create(id: 5, email:"5@naver.com", name:"김나영", password:1)
+User.create(id: 6, email:"6@naver.com", name:"김일혁", password:1)
+User.create(id: 7, email:"7@naver.com", name:"김지원", password:1)
+User.create(id: 8, email:"8@naver.com", name:"미카엘", password:1)
+User.create(id: 9, email:"9@naver.com", name:"최화정", password:1)
+

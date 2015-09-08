@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registratioins: "users/registrations" }
+  devise_for :users, controllers: { registrations: 'user/registrations' }
 
   root :to =>"home#layout01_01"
   get ':controller(/:action(/:id))'
