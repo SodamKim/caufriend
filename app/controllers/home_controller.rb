@@ -1,7 +1,11 @@
 class HomeController < ApplicationController
   def layout01_01
     if user_signed_in?
-      redirect_to '/home/layout01_05'
+      if Interest.where(:id => current_user.id).blank?
+        redirect_to '/home/layout01_05'
+      else
+        redirect_to '/home/layout02_01'
+      end
     end
   end
   
@@ -121,5 +125,10 @@ class HomeController < ApplicationController
   
   def layout01_08
     
-  end  
+  end 
+  
+  def layout02_01
+    @interest = Interest.where(:major => "경영", :religion => "불교").take
+    @user = User.where(:id => @interest.id).take
+  end
 end

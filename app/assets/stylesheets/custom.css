@@ -426,7 +426,4 @@ a {
 	width:100%;
 }
 
-/*layout01_05 modal 페이지 image 바꾸기*/
-.major_checkbox{
-  content: url(/assets/business/1.png);
-}
+/*layout01_05 modal 페이지, change image when checked*/

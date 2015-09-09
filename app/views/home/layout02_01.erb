@@ -39,19 +39,19 @@
   </div>
     
   <div class="date">
-    <h4>  date</h4>
+    <h4>  date : <%=Time.now%></h4> <!--수정 필요!!-->
   </div>
     
   <div class="front_profile">
-    <img src="http://i.imgur.com/gWWrrSZ.png" class="front_img">
+    <img src="<%=@interest.photo%>" class="front_img"> <!--사진크기 어떻게 하지..-->
     <br>  <br>
   <div class="container-fluid">
     <div class="row"> 
         <div class="col-xs-6">
           <div class="simple_profile">
-          <p>별명: 제라두</p><br>
-          <p>나이: 28</p><br>
-          <p>학과: 경영학과</p>
+          <p>별명: <%=@user.name%></p><br>
+          <p>나이: <%=@interest.age%></p><br>
+          <p>학과: <%=@interest.major%></p>
           </div>
         </div>
         <div class="col-xs-6">
@@ -73,7 +73,8 @@
           })
       })
   </script>
-      <img src="https://caufriend3-the-g.c9.io/assets/card.png" class="card">
+      <img src="https://caufriend3-the-g.c9.io/assets/card.png" class="card"> 
+      <!--수정필요!! 사진에 따라 다르지. 현재 강제로 함-->
   </div>  
   
   

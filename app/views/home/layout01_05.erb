@@ -128,17 +128,17 @@
       <div class="modal-body">
         <input type="hidden" id="user_id" name="user_id">
         <div class="row">
-          <div class="col-xs-3 button2" style="padding:5px">
-            <label><input class="major_checkbox" data-role="none" type="checkbox" value="경영"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+          <div class="col-xs-3" style="padding:5px">
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="경영"><span><img id="bg" src="/assets/business/1.png" style="width:100%"></span></label>
           </div>
           <div class="col-xs-3" style="padding:5px">
-            <label><input class="major_checkbox" data-role="none" type="checkbox" value="경영"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="수리"><span><img id="bg1" src="/assets/business/1.png" style="width:100%"></span></label>
           </div>
           <div class="col-xs-3" style="padding:5px">
-            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공"><span><img id="bg2" src="/assets/business/1.png" style="width:100%"></span></label>
           </div>
           <div class="col-xs-3" style="padding:5px">
-            <label><input class="major_checkbox" data-role="none" type="checkbox" value="컴공"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
+            <label><input class="major_checkbox" data-role="none" type="checkbox" value="물리"><span><img src="/assets/business/1.png" style="width:100%"></span></label>
           </div>
         </div>
         <div class="row">
@@ -176,7 +176,64 @@
 <!---->  
 </div>  
 <!--major2 뷰 페이지 끝-->
-<!--button선택 제한두기-->
+
+
+
+<!--경영button image 바꾸기-->
+<script>
+$(function() {
+ $('.major_checkbox[value="경영"]').click(function(){
+  if($("#bg").attr('src')== "/assets/business/1.png"){
+   $("#bg").attr('src',"/assets/business/1_checked.png");
+  }else{
+   $("#bg").attr('src',"/assets/business/1.png");
+  }
+ });
+});
+</script>
+<!--수리button image 바꾸기-->
+<script>
+$(function() {
+ $('.major_checkbox[value="수리"]').click(function(){
+  if($("#bg1").attr('src')== "/assets/business/1.png"){
+   $("#bg1").attr('src',"/assets/business/1_checked.png");
+  }else{
+   $("#bg1").attr('src',"/assets/business/1.png");
+  }
+ });
+});
+</script>
+<!--컴공button image 바꾸기-->
+<script>
+$(function() {
+ $('.major_checkbox[value="컴공"]').click(function(){
+  if($("#bg2").attr('src')== "/assets/business/1.png"){
+   $("#bg2").attr('src',"/assets/business/1_checked.png");
+  }else{
+   $("#bg2").attr('src',"/assets/business/1.png");
+  }
+ });
+});
+</script>
+
+<!--버튼 이미지 바꾸기 반복문 실패함 아직!! 
+<script>
+var major = ["경영", "수리", "컴공" ]
+for(i = 1; i < 4; i++){
+  $(function() {
+   $('.major_checkbox[value='+ major[i] +']').click(function(){
+    if($("#bg"+i).attr('src')== "/assets/business/1.png"){
+     $("#bg"+i).attr('src',"/assets/business/1_checked.png");
+    }else{
+     $("#bg"+i).attr('src',"/assets/business/1.png");
+    }
+   });
+  });
+}
+</script>
+-->
+
+<!--button 선택 제한두기 이거 하나면 제한 되네!! .major_checkbox에서는-->
 <script>
   $("input[type=checkbox].major_checkbox").click(function(){
     var bol = $("input[type=checkbox].major_checkbox:checked").length >= 1;
@@ -184,6 +241,10 @@
   })
 </script>
 <!--#major MODAL 끝-->
+
+
+
+
 
 <!--#grade MODAL 시작-->
 <!--grade모달 뷰 페이지-->
